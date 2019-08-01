@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',
+    filename='css/main.css') }}" />
+</head>
+
+<body>
+  <div class="container">
+
+  <a href="{{ url_for('main_page') }}"><h1 style="text-align:center">Weather Report</h1></a>
+
+  <div class="form-element">
+  <form method="POST">
+    <p class="form-element">Enter a city: </p><input type="text" name="city" class="form-element"/>
+    <input type="submit" value="Go" name="enter" class="form-element"/>
+  </form>
+  </div>
+
+  <table class="center-div">
+    <tr>
+      <td colspan=2 rowspan=2>
+        <img src="{{url_for("static", filename="images/scattered_clouds.png")}}">
+      </td>
+      <td>
+        <p>{{ weather_data["name"] }}<p>
+      </td>
+      <td>
+        <p>Temperature: {{ weather_data["temp"] }}C<p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p>{{ ctime["date"] }}</p>
+      </td>
+      <td>
+        <p>Pressure: {{ weather_data["pressure"] }}hPa</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2">
+        <p>{{ weather_data["elaborate"] }}</p>
+      </td>
+      <td>
+        <p>{{ ctime["year"] }}</p>
+      </td>
+      <td>
+        <p>Humidity: {{ weather_data["humidity"] }}%</p>
+      </td>
+    </tr>
+
+  </table>
+
+  </div>
+</body>
+
+
+</html>

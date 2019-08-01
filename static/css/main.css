@@ -1,0 +1,23 @@
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+
+td {
+  margin: 50px;
+}
+
+table {
+  text-align: center;
+}
+
+.center-div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mainReport {
+  text-align: center;
+}
