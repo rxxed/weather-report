@@ -1,5 +1,4 @@
 import json, requests
-import requests, json
 
 API_KEY = "API_KEY"
 
