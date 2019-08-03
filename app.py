@@ -18,13 +18,20 @@ def main_page():
         # extracting only the day of the week, month and year from current_time
         ctime = {"date":current_time[:11],"year":current_time[-4:]}
         weather_data = weather_report(city)
-        weather_description = weather_data["desc"]
+        try:
+            if weather_data["code"] != "404":
+                weather_description = weather_data["desc"]
+            else:
+                weather_description = None
+        except:
+            return "<h2>Unable to find city. Please enter a valid city name.</h2>"
         # if weather_description == "Clouds":
-        #     weather_logo = "scattered_clouds"
+        #     weather_image = "scattered_clouds"
         # else:
-        #     weather_logo = "clear_sky_day"
+        #     weather_image = "clear_sky_day"
+        # weather_image += ".png"
         return render_template("weather.html", ctime = ctime,
-        weather_data = weather_data)
+        weather_data = weather_data, weather_description=weather_description)
 
     return render_template("homepage.html")
 

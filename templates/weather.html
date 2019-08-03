@@ -21,7 +21,24 @@
   <table class="center-div">
     <tr>
       <td colspan=2 rowspan=2>
+
+        {% if weather_description == "Clouds"%}
         <img src="{{url_for("static", filename="images/scattered_clouds.png")}}">
+        {% elif weather_description == "Rain" or weather_description == "Drizzle"%}
+        <img src="{{url_for("static", filename="images/rain_day.png")}}">
+        {% elif weather_description == "Snow"%}
+        <img src="{{url_for("static", filename="images/snow.png")}}">
+        {% elif weather_description == "Thunderstorm"%}
+        <img src="{{url_for("static", filename="images/thunder_storm.png")}}">
+        {% elif weather_description == "Clear"%}
+        <img src="{{url_for("static", filename="images/clear_sky_day.png")}}">
+        {% elif weather_description == "Haze"%}
+        <img src="{{url_for("static", filename="images/mist.png")}}">
+        {% else %}
+        <p>N/A</p>
+        {% endif %}
+
+
       </td>
       <td>
         <p>{{ weather_data["name"] }}<p>

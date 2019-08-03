@@ -17,9 +17,15 @@ def weather_report(city_name):
         pressure = weather_report["main"]["pressure"]
         elaborate = weather_report["weather"][0]["description"]
         name = weather_report["name"]
+        error_code = weather_report["cod"]
         weather_dict = {"name":name, "temp":round(temperature,1), "humidity":humidity,
-                        "desc":description, "pressure":pressure, "elaborate": elaborate}
+                        "desc":description, "pressure":pressure, "elaborate": elaborate,
+                        "code": error_code}
         return weather_dict
     else:
         pass
         # city not found
+
+
+weather = weather_report("Seattle")
+print(weather["desc"])
