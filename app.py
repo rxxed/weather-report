@@ -25,16 +25,10 @@ def main_page():
                 weather_description = None
         except:
             return "<h2>Unable to find city. Please enter a valid city name.</h2>"
-        # if weather_description == "Clouds":
-        #     weather_image = "scattered_clouds"
-        # else:
-        #     weather_image = "clear_sky_day"
-        # weather_image += ".png"
         return render_template("weather.html", ctime = ctime,
         weather_data = weather_data, weather_description=weather_description)
 
     return render_template("homepage.html")
-
 
 
 if __name__ == "__main__":

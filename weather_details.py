@@ -25,7 +25,3 @@ def weather_report(city_name):
     else:
         pass
         # city not found
-
-
-weather = weather_report("Seattle")
-print(weather["desc"])
