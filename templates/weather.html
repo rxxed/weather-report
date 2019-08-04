@@ -32,7 +32,7 @@
         <img src="{{url_for("static", filename="images/thunder_storm.png")}}">
         {% elif weather_description == "Clear"%}
         <img src="{{url_for("static", filename="images/clear_sky_day.png")}}">
-        {% elif weather_description == "Haze"%}
+        {% elif weather_description == "Haze" or weather_description == "Mist"%}
         <img src="{{url_for("static", filename="images/mist.png")}}">
         {% else %}
         <p>N/A</p>
